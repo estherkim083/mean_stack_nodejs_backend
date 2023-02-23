@@ -1,0 +1,191 @@
+
+### post categories
+POST http://localhost:3000/api/v1/categories
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ4NzMxMTAsImV4cCI6MTY3NDk1OTUxMH0.1zrr-7E1K1eSEqvBkDGLUa-smxNpxBgyAyE5quGvGAo
+
+{
+    "name" : "computer",
+    "icon" : "/img/computer.png",
+    "color": "white"
+}
+
+### delete categories
+DELETE http://localhost:3000/api/v1/categories/63d06f2f2f078157403bda95
+### find category by id
+GET http://localhost:3000/api/v1/categories/63d48b50246478e1b9f196aa
+
+### update category by id
+PUT http://localhost:3000/api/v1/categories/63d06f6a2f078157403bda97
+content-type: application/json
+
+{
+    "name" : "earring",
+    "icon" : "/img/earring.png",
+    "color": "gold"
+}
+
+### post products
+POST http://localhost:3000/api/v1/products
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ4NzMxMTAsImV4cCI6MTY3NDk1OTUxMH0.1zrr-7E1K1eSEqvBkDGLUa-smxNpxBgyAyE5quGvGAo
+
+{
+    "name": "laptop",
+    "image": "/img/computer.png",
+    "countInStock": 3,
+    "description": "laptop brand new",
+    "richDescription": "newly featured",
+    "brand": "ask",
+    "price": 100,
+    "category": "63d48b50246478e1b9f196aa",
+    "rating": 5,
+    "numReviews": 5,
+}
+
+### get product by id
+GET http://localhost:3000/api/v1/products/63d07a763435def6b7d8c342 HTTP/1.1
+
+### get products
+GET http://localhost:3000/api/v1/products
+
+### update products
+PUT http://localhost:3000/api/v1/products/63d07dd5b4fd736834ed37d8 HTTP/1/1
+content-type: application/json
+
+{
+    "name": "earring ",
+    "image": "/img/earring.png",
+    "countInStock": 3,
+    "description": "earring brand new",
+    "richDescription": "newly featured",
+    "brand": "ask",
+    "price": 100,
+    "category": "63d06f6a2f078157403bda97",
+    "rating": 5,
+    "numReviews": 5,
+    "isFeatured": true
+}
+
+### delete products
+DELETE http://localhost:3000/api/v1/products/63d07a763435def6b7d8c342
+
+
+### get products count
+GET http://localhost:3000/api/v1/products/get/count
+
+### get products featured
+GET http://localhost:3000/api/v1/products/get/featured
+
+### get products featured (limit count)
+GET http://localhost:3000/api/v1/products/get/featured/3
+
+### get products with some categories
+GET http://localhost:3000/api/v1/products?categories=63d06f6a2f078157403bda97 HTTP/1.1
+
+### post user
+POST http://localhost:3000/api/v1/users/register HTTP/1.1
+content-type: application/json
+
+{
+    "name": "khikhi",
+    "email": "khikhi@gmail.com",
+    "password": "12314gxdfsd3s",
+    "phone": "010-0000-0000",
+    "isAdmin": true,
+    "street": "반포",
+    "apartment": "hello",
+    "zip": "34234",
+    "city": "서울",
+    "country": "south korea"
+}
+### find user by id
+GET http://localhost:3000/api/v1/users/63d098d64528a846b6372961
+
+### find users
+GET http://localhost:3000/api/v1/users
+
+### update user by id
+PUT http://localhost:3000/api/v1/users/63d099fb0a0c995f29da4675
+content-type: application/json
+
+{
+    "name": "khi",
+    "email": "khi@gmail.com",
+    "password": "sss",
+    "phone": "010-0000-0000",
+    "isAdmin": false,
+    "street": "반포",
+    "apartment": "hello",
+    "zip": "34234",
+    "city": "서울",
+    "country": "south korea"
+}
+### login user
+POST http://localhost:3000/api/v1/users/login
+content-type: application/json
+
+{
+    "email" : "khikhi@gmail.com",
+    "password": "12314gxdfsd3s"
+}
+### get users count
+GET http://localhost:3000/api/v1/users/get/count
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ2OTE4OTUsImV4cCI6MTY3NDc3ODI5NX0.wQ_XOpiHax4pxOf1Q6KicapZaaa-72JrQ1MFnJHn0Io
+
+### order items
+POST http://localhost:3000/api/v1/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ2OTE4OTUsImV4cCI6MTY3NDc3ODI5NX0.wQ_XOpiHax4pxOf1Q6KicapZaaa-72JrQ1MFnJHn0Io
+content-type: application/json
+
+{
+    "orderItems": [
+        {
+            "quantity":5,
+            "product":"5f15da13e520d44421ed8e9e"
+        },
+        {
+            "quantity":10,
+            "product":"5f15d9b3e520d44421ed8e9d"
+        }
+    ],
+    "status": "active",
+    "shippingAddress1": "Avenue Street",
+    "shippingAddress2": "15",
+    "city" :"Seoul",
+    "zip": "12432",
+    "country" : "slkfj",
+    "phone": "12o437234",
+    "totalPrice": 234.234,
+    "user": "5f1687e1be2e99a158c08504"
+}
+### get order items
+GET http://localhost:3000/api/v1/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ2OTE4OTUsImV4cCI6MTY3NDc3ODI5NX0.wQ_XOpiHax4pxOf1Q6KicapZaaa-72JrQ1MFnJHn0Io
+
+### get order items by id
+GET http://localhost:3000/api/v1/orders/63d1cce967e22422627931f3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ2OTE4OTUsImV4cCI6MTY3NDc3ODI5NX0.wQ_XOpiHax4pxOf1Q6KicapZaaa-72JrQ1MFnJHn0Io
+
+### update order items by id
+PUT http://localhost:3000/api/v1/orders/63d1cce967e22422627931f3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ2OTE4OTUsImV4cCI6MTY3NDc3ODI5NX0.wQ_XOpiHax4pxOf1Q6KicapZaaa-72JrQ1MFnJHn0Io
+content-type: application/json
+
+{
+    "status": "shipped"
+}
+
+
+### delete order items by id
+DELETE  http://localhost:3000/api/v1/orders/63d1cce967e22422627931f3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ2OTE4OTUsImV4cCI6MTY3NDc3ODI5NX0.wQ_XOpiHax4pxOf1Q6KicapZaaa-72JrQ1MFnJHn0Io
+
+### get order items's totalsales
+GET http://localhost:3000/api/v1/orders/get/totalsales
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ2OTE4OTUsImV4cCI6MTY3NDc3ODI5NX0.wQ_XOpiHax4pxOf1Q6KicapZaaa-72JrQ1MFnJHn0Io
+
+
+### get orders count
+GET http://localhost:3000/api/v1/orders/get/count
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2QxYzUzMGJlMmZjOTY0ZTAyNjAwOTQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2NzQ2OTE4OTUsImV4cCI6MTY3NDc3ODI5NX0.wQ_XOpiHax4pxOf1Q6KicapZaaa-72JrQ1MFnJHn0Io
